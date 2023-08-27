@@ -23,23 +23,21 @@ void FCFS(int numProcess, int arrivalTime[], int burstTime[]){
     int timeSpent = 0, idleCPUTime = 0;
     int completionTime[numProcess], turnAroundTime[numProcess], waitingTime[numProcess];
     
+    // TurnAroundTime = Completion time of the process - Arvial Time of the process
+    // WaitingTime = TurnAroundTime of the process - Burst Time of the process
+
     while(findMinIndex(arrivalTime, numProcess) != -1){
         int minIndex = findMinIndex(arrivalTime, numProcess);
         
-        if (arrivalTime[minIndex] == timeSpent){ // Process doesn't have to wait for its turn waiting time will be zero;
-            
-        }
-        else if (arrivalTime[minIndex] < timeSpent){ //Process will have to wait for other process to finish:
-            
-        }
+        if (arrivalTime[minIndex] == timeSpent); // Process doesn't have to wait for its turn waiting time will be zero;
+        else if (arrivalTime[minIndex] < timeSpent); //Process will have to wait for other process to finish:
         else if (arrivalTime[minIndex] > timeSpent){ // CPU will be idle untill the next process arrives:
             idleCPUTime += arrivalTime[minIndex] - timeSpent;
             timeSpent += arrivalTime[minIndex] - timeSpent;
-            
         }
 
-        timeSpent += burstTime[minIndex];
-        turnAroundTime[minIndex] = timeSpent - arrivalTime[minIndex];
+        timeSpent += burstTime[minIndex]; // This is the time that process is running
+        turnAroundTime[minIndex] = timeSpent - arrivalTime[minIndex]; // 
         completionTime[minIndex] = turnAroundTime[minIndex] + arrivalTime[minIndex];
         waitingTime[minIndex] = turnAroundTime[minIndex] - burstTime[minIndex];
 
@@ -57,7 +55,6 @@ void FCFS(int numProcess, int arrivalTime[], int burstTime[]){
     
     printf("\nWaiting Time for each process: ");
     printArr(waitingTime, numProcess);
-
 }
 
 int main(){
@@ -78,9 +75,4 @@ int main(){
 
     FCFS(numProcess, arrivalTime, burstTime);
 
-    /*Sample Test case:
-    4
-    0 1 5 6
-    2 2 3 4
-    */
 }
