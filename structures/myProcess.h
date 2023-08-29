@@ -6,6 +6,8 @@ struct myProcess {
     int numProcess;
     int idleCPUTime;
     int timeSpent;
+    float avgTurnAroundTime;
+    float avgWaitingTime;
     int arrivalTime[100];
     int burstTime[100];
     int completionTime[100];
@@ -13,7 +15,7 @@ struct myProcess {
     int waitingTime[100];
 };
 
-struct myProcess createProcess(int numProcess);
+struct myProcess createProcess(int numProcess, int arrivalTime[], int burstTime[]);
 void printProcess(struct myProcess *pr);
 
 #endif

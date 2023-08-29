@@ -10,7 +10,9 @@ void FCFS(struct myProcess *pr){
     int *completionTime = pr->completionTime;
     int *burstTime = pr->burstTime;
     int *waitingTime = pr->waitingTime;
-    
+    int totalTurnAroundTime = 0;
+    int totalWaitingTime = 0;
+
 
     while(findMinIndex(arrivalTime, numProcess) != -1){
         int minIndex = findMinIndex(arrivalTime, numProcess);
@@ -29,6 +31,10 @@ void FCFS(struct myProcess *pr){
 
         arrivalTime[minIndex] = -1;
     }
+    for (int i=0; i<numProcess; i++) totalTurnAroundTime += turnAroundTime[i];
+    for (int i=0; i<numProcess; i++) totalWaitingTime += waitingTime[i];
     pr->timeSpent = timeSpent;
     pr->idleCPUTime = idleCPUTime;
+    pr->avgTurnAroundTime = (float)totalTurnAroundTime / (float)numProcess;
+    pr->avgWaitingTime = (float)totalWaitingTime / (float)numProcess;
 }

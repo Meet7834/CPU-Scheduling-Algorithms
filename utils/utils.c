@@ -20,3 +20,17 @@ int findMinIndex(int arr[], int length){
     
     return index;
 }
+
+int findMinIndexNonZero(int arr[], int length){
+    int min = __INT_MAX__, index = length;
+
+    for (int i=0; i<length; i++) if (min > arr[i] && arr[i] != 0) {
+        min = arr[i];
+        index = i;
+    }
+
+    // if it returns index as -1 it means the all the process are executed.
+    if (index == length) return -1;
+
+    return index;
+}

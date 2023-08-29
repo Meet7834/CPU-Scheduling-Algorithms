@@ -1,9 +1,9 @@
 #include<stdio.h>
-//#include <stdlib.h>
+#include <stdlib.h>
 #include "structures/myProcess.h"
-//#include "structures/heap.h"
+#include "structures/heap.h"
 #include "utils/utils.h"
-//#include "algos/FCFS.h"
+#include "algos/FCFS.h"
 #include "algos/SJF.h"
 
 int main(){
@@ -14,17 +14,25 @@ int main(){
 
     printf("Enter the number of the process: ");
     scanf("%d", &numProcess);
+    int arrivalTime[numProcess], burstTime[numProcess];
 
-    struct myProcess myPr = createProcess(numProcess);
-    
     printf("\nEnter arrival time of the process: ");
-    for(int i=0; i<numProcess; i++) scanf("%d", &myPr.arrivalTime[i]);
-    
+    for(int i=0; i<numProcess; i++) scanf("%d", &arrivalTime[i]);
+
     printf("\nEnter burst time of the process: ");
-    for(int i=0; i<numProcess; i++) scanf("%d", &myPr.burstTime[i]);
+    for(int i=0; i<numProcess; i++) scanf("%d", &burstTime[i]);
+
+    struct myProcess myPrFCFS = createProcess(numProcess, arrivalTime, burstTime);
+    struct myProcess myPrSJF = createProcess(numProcess, arrivalTime, burstTime);
+
 
     // Call to FCFS function will calculate all the required numbers and then the printProcess function will print all the arrays and needed numbers.
-    SJF(&myPr);
-    printProcess(&myPr);
-    
+    FCFS(&myPrFCFS);
+    SJF(&myPrSJF);
+
+    printf("\nFor FCFS: ");
+    printProcess(&myPrFCFS);
+    printf("\nFor SJF: ");
+    printProcess(&myPrSJF);
+
 }
