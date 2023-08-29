@@ -1,15 +1,10 @@
 #include<stdio.h>
-#include <stdlib.h>
+//#include <stdlib.h>
 #include "structures/myProcess.h"
+//#include "structures/heap.h"
 #include "utils/utils.h"
-#include "algos/FCFS.h"
-// Defination of functions:
-
-//Structure:
-
-// Constructor & Other Class-Like Functions:
-
-// Main Algorithms:
+//#include "algos/FCFS.h"
+#include "algos/SJF.h"
 
 int main(){
     int numProcess;
@@ -29,7 +24,7 @@ int main(){
     for(int i=0; i<numProcess; i++) scanf("%d", &myPr.burstTime[i]);
 
     // Call to FCFS function will calculate all the required numbers and then the printProcess function will print all the arrays and needed numbers.
-    FCFS(&myPr);
+    SJF(&myPr);
     printProcess(&myPr);
     
 }

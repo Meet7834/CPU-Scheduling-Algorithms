@@ -13,7 +13,6 @@ struct myProcess {
     int waitingTime[100];
 };
 
-
 struct myProcess createProcess(int numProcess);
 void printProcess(struct myProcess *pr);
 

@@ -34,7 +34,7 @@ The CPU Scheduling Algorithm Simulator is a tool designed to help users understa
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/cpu-scheduling-simulator.git
+   git clone https://github.com/Meet7834/CPU-Scheduling-Algorithms.git
    ```
 2. Navigate to the project directory. 
 

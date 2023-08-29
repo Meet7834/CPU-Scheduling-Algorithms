@@ -24,7 +24,7 @@ void FCFS(struct myProcess *pr){
 
         timeSpent += burstTime[minIndex]; // This is the time that process is running
         turnAroundTime[minIndex] = timeSpent - arrivalTime[minIndex]; 
-        completionTime[minIndex] = turnAroundTime[minIndex] + arrivalTime[minIndex];
+        completionTime[minIndex] = timeSpent;
         waitingTime[minIndex] = turnAroundTime[minIndex] - burstTime[minIndex];
 
         arrivalTime[minIndex] = -1;
