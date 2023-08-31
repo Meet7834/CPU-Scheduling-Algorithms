@@ -6,9 +6,9 @@
 #include "algos/FCFS.h"
 #include "algos/SJF.h"
 
-int main(){
+int main() {
     int numProcess;
-    
+
     // Input Part:
     // Enter the number of process and then enter the elements to the array: 
 
@@ -17,10 +17,10 @@ int main(){
     int arrivalTime[numProcess], burstTime[numProcess];
 
     printf("\nEnter arrival time of the process: ");
-    for(int i=0; i<numProcess; i++) scanf("%d", &arrivalTime[i]);
+    for (int i = 0; i < numProcess; i++) scanf("%d", &arrivalTime[i]);
 
     printf("\nEnter burst time of the process: ");
-    for(int i=0; i<numProcess; i++) scanf("%d", &burstTime[i]);
+    for (int i = 0; i < numProcess; i++) scanf("%d", &burstTime[i]);
 
     struct myProcess myPrFCFS = createProcess(numProcess, arrivalTime, burstTime);
     struct myProcess myPrSJF = createProcess(numProcess, arrivalTime, burstTime);
@@ -32,7 +32,7 @@ int main(){
 
     printf("\nFor FCFS: ");
     printProcess(&myPrFCFS);
-    printf("\nFor SJF: ");
+    printf("\n\nFor SJF: ");
     printProcess(&myPrSJF);
 
 }

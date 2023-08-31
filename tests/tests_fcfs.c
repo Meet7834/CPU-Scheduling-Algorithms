@@ -24,8 +24,8 @@ void test_FCFS_algorithm() {
     assert(test2.timeSpent == 20);
     assert(test2.idleCPUTime == 0);
     printf("FCFS test 2 passed!\n");
-    
-    
+
+
     // test 3
     int arrivalTime3[] = {0, 5, 19, 30};
     int burstTime3[] = {9, 4, 2, 5};
@@ -36,7 +36,7 @@ void test_FCFS_algorithm() {
     assert(test3.idleCPUTime == 15);
     printf("FCFS test 3 passed!\n");
     printf("All the FCFS test passed!\n");
-    
+
 }
 
 int main() {

@@ -17,7 +17,7 @@ void test_SJF_algorithm() {
     // test 2:
     int arrivalTime2[] = {0, 1, 2, 3, 4};
     int burstTime2[] = {3, 2, 3, 2, 3};
-    struct myProcess test2= createProcess(5, arrivalTime2, burstTime2);
+    struct myProcess test2 = createProcess(5, arrivalTime2, burstTime2);
     SJF(&test2);
 
     assert(test2.timeSpent == 13);
@@ -27,7 +27,7 @@ void test_SJF_algorithm() {
     // test 3:
     int arrivalTime3[] = {0, 0, 4, 30};
     int burstTime3[] = {9, 4, 2, 5};
-    struct myProcess test3= createProcess(4, arrivalTime3, burstTime3);
+    struct myProcess test3 = createProcess(4, arrivalTime3, burstTime3);
     SJF(&test3);
 
     assert(test3.timeSpent == 35);

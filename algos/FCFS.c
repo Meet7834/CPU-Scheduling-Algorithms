@@ -2,7 +2,8 @@
 #include "../utils/utils.h"
 #include "FCFS.h"
 
-void FCFS(struct myProcess *pr){
+void FCFS(struct myProcess *pr) {
+    // Destructring all the data from the process struct.
     int numProcess = pr->numProcess;
     int timeSpent = 0, idleCPUTime = 0;
     int *arrivalTime = pr->arrivalTime;
@@ -14,27 +15,32 @@ void FCFS(struct myProcess *pr){
     int totalWaitingTime = 0;
 
 
-    while(findMinIndex(arrivalTime, numProcess) != -1){
-        int minIndex = findMinIndex(arrivalTime, numProcess);
-        
-        if (arrivalTime[minIndex] == timeSpent); // Process doesn't have to wait for its turn waiting time will be zero;
-        else if (arrivalTime[minIndex] < timeSpent); //Process will have to wait for other process to finish:
-        else if (arrivalTime[minIndex] > timeSpent){ // CPU will be idle untill the next process arrives:
+    while (findMinIndex(arrivalTime, numProcess) != -1) { // this will run unitll we set all the arrival time to -1
+        int minIndex = findMinIndex(arrivalTime, numProcess); // finds min arrivalTime which isn't -1.
+
+        if (arrivalTime[minIndex] == timeSpent); // Process doesn't have to wait for its turn ----> waiting time will be zero;
+        else if (arrivalTime[minIndex] < timeSpent); //Process will have to wait for other process to finish.
+        else if (arrivalTime[minIndex] > timeSpent) { // CPU will be idle untill the next process arrives (there aren't any process present to be executed)
             idleCPUTime += arrivalTime[minIndex] - timeSpent;
             timeSpent += arrivalTime[minIndex] - timeSpent;
         }
 
         timeSpent += burstTime[minIndex]; // This is the time that process is running
-        turnAroundTime[minIndex] = timeSpent - arrivalTime[minIndex]; 
+        turnAroundTime[minIndex] = timeSpent - arrivalTime[minIndex]; // TAT = CT - AT
         completionTime[minIndex] = timeSpent;
-        waitingTime[minIndex] = turnAroundTime[minIndex] - burstTime[minIndex];
+        waitingTime[minIndex] = turnAroundTime[minIndex] - burstTime[minIndex]; // WT = TAT - BT
 
-        arrivalTime[minIndex] = -1;
+        arrivalTime[minIndex] = -1; // Setting arrival time to -1 so that we don't execute the same process again.
     }
-    for (int i=0; i<numProcess; i++) totalTurnAroundTime += turnAroundTime[i];
-    for (int i=0; i<numProcess; i++) totalWaitingTime += waitingTime[i];
+
+    for (int i = 0; i < numProcess; i++) {
+        totalTurnAroundTime += turnAroundTime[i];
+        totalWaitingTime += waitingTime[i];
+    }
+
+    // Setting data to the original structure.
     pr->timeSpent = timeSpent;
     pr->idleCPUTime = idleCPUTime;
-    pr->avgTurnAroundTime = (float)totalTurnAroundTime / (float)numProcess;
-    pr->avgWaitingTime = (float)totalWaitingTime / (float)numProcess;
+    pr->totalTurnAroundTime = totalTurnAroundTime;
+    pr->totalWaitingTime = totalWaitingTime;
 }
