@@ -6,13 +6,21 @@ void SJF(struct myProcess *pr) {
     // Destructuring all the data from the process struct.
     int numProcess = pr->numProcess;
     int timeSpent = 0, idleCPUTime = 0;
-    int *arrivalTime = pr->arrivalTime;
     int *turnAroundTime = pr->turnAroundTime;
     int *completionTime = pr->completionTime;
-    int *burstTime = pr->burstTime;
     int *waitingTime = pr->waitingTime;
     int totalTurnAroundTime = 0;
     int totalWaitingTime = 0;
+
+    // we make two new arrays as we are going to make changes in them (so it wouldn't affect our original data)
+    int arrivalTime[numProcess];
+    int burstTime[numProcess];
+
+    // intialize the array with the original data
+    for (int i=0; i<numProcess; i++) {
+        arrivalTime[i] = pr->arrivalTime[i];
+        burstTime[i] = pr->burstTime[i];
+    }
 
     struct heap h = createHeap(); // Creating our custom made heap data structure.
 

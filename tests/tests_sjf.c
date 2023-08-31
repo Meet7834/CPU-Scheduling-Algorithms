@@ -48,8 +48,8 @@ void test_SJF_algorithm() {
 
     assert(test4.timeSpent == 16);
     assert(test4.idleCPUTime == 0);
-    assert(test4.totalWaitingTime == 24);
-    assert(test4.totalTurnAroundTime == 40);
+    assert(test4.totalWaitingTime == 24); // avg = 4.80
+    assert(test4.totalTurnAroundTime == 40); // avg = 8.00
     printf("\nSJF test 4 passed!");
     printf("\nAll SJF tests passed!");
 }

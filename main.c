@@ -34,5 +34,4 @@ int main() {
     printProcess(&myPrFCFS);
     printf("\n\nFor SJF: ");
     printProcess(&myPrSJF);
-
 }

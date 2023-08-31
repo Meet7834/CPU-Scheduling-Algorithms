@@ -41,7 +41,7 @@ int minInHeapIndex(struct heap *h) { // This function will return the index of t
 }
 
 int deque(struct heap *h) { // remove the first element of the heap
-    if (h->length == 0)  return -1;
+    if (h->length == 0) return -1;
 
     int removed = h->que[0];
     int removedIndex = h->index[0];
@@ -64,6 +64,8 @@ int deque(struct heap *h) { // remove the first element of the heap
     h->que[0] = h->min;
     h->index[0] = indexOfMinIndex;
     h->length--;
+
+    if (h->length == 0) h->min = __INT_MAX__; // if the heap is empty we set the min to very high value
 
     return removed;
 }
