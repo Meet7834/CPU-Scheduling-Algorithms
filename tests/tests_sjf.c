@@ -12,6 +12,8 @@ void test_SJF_algorithm() {
 
     assert(test1.timeSpent == 14);
     assert(test1.idleCPUTime == 1);
+    assert(test1.totalWaitingTime == 12);
+    assert(test1.totalTurnAroundTime == 25);
     printf("\nSJF test 1 passed!");
 
     // test 2:
@@ -22,6 +24,8 @@ void test_SJF_algorithm() {
 
     assert(test2.timeSpent == 13);
     assert(test2.idleCPUTime == 0);
+    assert(test2.totalWaitingTime == 15);
+    assert(test2.totalTurnAroundTime == 28);
     printf("\nSJF test 2 passed!");
 
     // test 3:
@@ -32,7 +36,21 @@ void test_SJF_algorithm() {
 
     assert(test3.timeSpent == 35);
     assert(test3.idleCPUTime == 15);
+    assert(test3.totalWaitingTime == 6);
+    assert(test3.totalTurnAroundTime == 26);
     printf("\nSJF test 3 passed!");
+
+    // test 4:
+    int arrivalTime4[] = {3, 1, 4, 0, 2};
+    int burstTime4[] = {1, 4, 2, 6, 3};
+    struct myProcess test4 = createProcess(5, arrivalTime4, burstTime4);
+    SJF(&test4);
+
+    assert(test4.timeSpent == 16);
+    assert(test4.idleCPUTime == 0);
+    assert(test4.totalWaitingTime == 24);
+    assert(test4.totalTurnAroundTime == 40);
+    printf("\nSJF test 4 passed!");
     printf("\nAll SJF tests passed!");
 }
 

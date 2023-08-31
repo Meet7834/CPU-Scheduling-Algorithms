@@ -13,6 +13,8 @@ void test_FCFS_algorithm() {
 
     assert(test1.timeSpent == 12);
     assert(test1.idleCPUTime == 1);
+    assert(test1.totalWaitingTime == 3);
+    assert(test1.totalTurnAroundTime == 14);
     printf("FCFS test 1 passed!\n");
 
     // test 2:
@@ -23,6 +25,8 @@ void test_FCFS_algorithm() {
 
     assert(test2.timeSpent == 20);
     assert(test2.idleCPUTime == 0);
+    assert(test2.totalWaitingTime == 27);
+    assert(test2.totalTurnAroundTime == 47);
     printf("FCFS test 2 passed!\n");
 
 
@@ -34,6 +38,8 @@ void test_FCFS_algorithm() {
 
     assert(test3.timeSpent == 35);
     assert(test3.idleCPUTime == 15);
+    assert(test3.totalWaitingTime == 4);
+    assert(test3.totalTurnAroundTime == 24);
     printf("FCFS test 3 passed!\n");
     printf("All the FCFS test passed!\n");
 
