@@ -73,7 +73,7 @@ int deque(struct heap *h) { // remove the first element of the heap
 void printHeap(struct heap *h) { // prints the element and indexs of the heap.
     printf("\nElements: ");
     for (int i = 0; i < h->length; i++) printf("%d ", h->que[i]);
-    printf("\nIndexs: ");
+    printf("\nIndexes: ");
     for (int i = 0; i < h->length; i++) printf("%d ", h->index[i]);
 }
 

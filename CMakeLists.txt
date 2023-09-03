@@ -18,4 +18,8 @@ add_executable(CPU_Scheduling_Algorithms
         structures/myProcess.h
         utils/utils.c
         utils/utils.h
-        main.c)
+        main.c
+        structures/queue.c
+        structures/queue.h
+        algos/RoundRobin.c
+        algos/RoundRobin.h)

@@ -11,6 +11,29 @@ struct myProcess createProcess(int numProcess, int arrivalTime[], int burstTime[
     newProcess.timeSpent = 0;
     newProcess.totalWaitingTime = 0;
     newProcess.totalTurnAroundTime = 0;
+    newProcess.contextSwitches = -1;
+    newProcess.timeQuantum = -1;
+
+    // Initialize the array for the arrival and burst time.
+    for (int i = 0; i < numProcess; i++) {
+        newProcess.arrivalTime[i] = arrivalTime[i];
+        newProcess.burstTime[i] = burstTime[i];
+    }
+
+    return newProcess;
+}
+
+struct myProcess createProcessPreEmptive(int numProcess, int arrivalTime[], int burstTime[], int timeQuantum) { // Creates a new instance of structure myProcess
+    struct myProcess newProcess; // declare a instace of myProcess
+
+    // Initialize the varaibles
+    newProcess.numProcess = numProcess;
+    newProcess.idleCPUTime = 0;
+    newProcess.timeSpent = 0;
+    newProcess.totalWaitingTime = 0;
+    newProcess.totalTurnAroundTime = 0;
+    newProcess.contextSwitches = 0;
+    newProcess.timeQuantum = timeQuantum;
 
     // Initialize the array for the arrival and burst time.
     for (int i = 0; i < numProcess; i++) {
