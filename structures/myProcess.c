@@ -45,38 +45,51 @@ struct myProcess createProcessPreEmptive(int numProcess, int arrivalTime[], int 
 }
 
 void printProcess(struct myProcess *pr) { // Prints the process varibles
+    printf("\n");
     printf("\nTotal time spent on running these process(s): %d", pr->timeSpent);
     printf("\nTotal idle CPU time: %d", pr->idleCPUTime);
+    printf("\n");
 
-    printf("\nCompletion Time for each process: ");
+    printf("\nCompletion Time:  [ ");
     printArr(pr->completionTime, pr->numProcess);
+    printf("]");
 
-    printf("\nTurn Around Time for each process: ");
+    printf("\nTurn Around Time: [ ");
     printArr(pr->turnAroundTime, pr->numProcess);
+    printf("]");
 
-    printf("\nWaiting Time for each process: ");
+    printf("\nWaiting Time:     [ ");
     printArr(pr->waitingTime, pr->numProcess);
+    printf("]");
 
+    printf("\n");
     printf("\nAvg Waiting Time: %.2f", (float) pr->totalWaitingTime / (float) pr->numProcess);
     printf("\nAvg Turn Around Time: %.2f", (float) pr->totalTurnAroundTime / (float) pr->numProcess);
 }
 
 void printProcessPreEmptive(struct myProcess *pr) { // Prints the process varibles
+    printf("\n");
     printf("\nTotal time spent on running these process(s): %d", pr->timeSpent);
     printf("\nTotal idle CPU time: %d", pr->idleCPUTime);
+    printf("\n");
 
-    printf("\nCompletion Time for each process: ");
+    printf("\nCompletion Time:  [ ");
     printArr(pr->completionTime, pr->numProcess);
+    printf("]");
 
-    printf("\nTurn Around Time for each process: ");
+    printf("\nTurn Around Time: [ ");
     printArr(pr->turnAroundTime, pr->numProcess);
+    printf("]");
 
-    printf("\nWaiting Time for each process: ");
+    printf("\nWaiting Time:     [ ");
     printArr(pr->waitingTime, pr->numProcess);
+    printf("]");
 
-    printf("\nResponse Time for each process: ");
+    printf("\nResponse Time:    [ ");
     printArr(pr->responseTime, pr->numProcess);
+    printf("]");
 
+    printf("\n");
     printf("\nAvg Waiting Time: %.2f", (float) pr->totalWaitingTime / (float) pr->numProcess);
     printf("\nAvg Turn Around Time: %.2f", (float) pr->totalTurnAroundTime / (float) pr->numProcess);
     printf("\nNumber of context switches: %d", pr->contextSwitches);

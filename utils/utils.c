@@ -3,7 +3,7 @@
 
 // Utility Functions:
 void printArr(int arr[], int length){ // Prints the array
-    printf("\n");
+//    printf("\n");
     for (int i=0; i<length; i++) printf("%d ", arr[i]);
 }
 
