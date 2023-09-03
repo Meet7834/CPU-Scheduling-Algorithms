@@ -22,4 +22,6 @@ add_executable(CPU_Scheduling_Algorithms
         structures/queue.c
         structures/queue.h
         algos/RoundRobin.c
-        algos/RoundRobin.h)
+        algos/RoundRobin.h
+        algos/SRTF.c
+        algos/SRTF.h)

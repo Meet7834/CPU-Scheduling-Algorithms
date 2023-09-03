@@ -53,7 +53,8 @@ void SJF(struct myProcess *pr) {
 
             // Store the data for the removed process
             int removedIndex = h.index[0];
-            int removedBurstTime = deque(&h);
+            int removedBurstTime = h.que[0];
+            deque(&h);
             int removedArrivalTime = arrivalTime[removedIndex];
 
             arrivalTime[removedIndex] = -1; // Set arrival time to -1 so that we don't encouter the same process again

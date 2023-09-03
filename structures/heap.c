@@ -34,13 +34,14 @@ int minInHeapIndex(struct heap *h) { // This function will return the index of t
     if (h->length == 0) return -1; // if the heap is empty return -1
     int minIndex = 0; // Else presume the first element to be minimum
     for (int i = 0; i < h->length; i++) {
-        if (h->que[i] < h->que[minIndex] && h->que[i] != -1) minIndex = i; // Basic logic for finding the minimum element (except it ignores -1)
+        if (h->que[i] < h->que[minIndex] && h->que[i] != -1) minIndex = i;
+        if (h->que[i] == h->que[minIndex] && h->que[i] != -1 && h->index[minIndex] > h->index[i]) minIndex = i;// Basic logic for finding the minimum element (except it ignores -1)
     }
-    h->min = minIndex;
+    h->min = h->que[minIndex];
     return minIndex;
 }
 
-int deque(struct heap *h) { // remove the first element of the heap
+int deque(struct heap *h) { // remove the first element of the heap and returns its index
     if (h->length == 0) return -1;
 
     int removed = h->que[0];
@@ -67,7 +68,7 @@ int deque(struct heap *h) { // remove the first element of the heap
 
     if (h->length == 0) h->min = __INT_MAX__; // if the heap is empty we set the min to very high value
 
-    return removed;
+    return removedIndex;
 }
 
 void printHeap(struct heap *h) { // prints the element and indexs of the heap.
