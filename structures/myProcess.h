@@ -28,4 +28,6 @@ void printProcess(struct myProcess *pr);
 
 void printProcessPreEmptive(struct myProcess *pr);
 
+void printCompare(struct myProcess *pr1, struct myProcess *pr2, struct myProcess *pr3, struct myProcess *pr4);
+
 #endif

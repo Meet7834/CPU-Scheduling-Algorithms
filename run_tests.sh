@@ -4,6 +4,6 @@ gcc -o test_rr tests/tests_rr.c structures/myProcess.c structures/queue.c utils/
 gcc -o test_srtf tests/tests_srtf.c structures/myProcess.c structures/heap.c utils/utils.c algos/SRTF.c -I. -lm
 ./test_fcfs
 ./test_sjf
-./test_rr
 ./test_srtf
+./test_rr
 rm test_fcfs test_sjf test_rr test_srtf
