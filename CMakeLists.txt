@@ -24,4 +24,5 @@ add_executable(CPU_Scheduling_Algorithms
         algos/RoundRobin.c
         algos/RoundRobin.h
         algos/SRTF.c
-        algos/SRTF.h)
+        algos/SRTF.h
+)

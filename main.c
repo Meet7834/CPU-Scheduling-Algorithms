@@ -52,7 +52,7 @@ int main() {
 //        printf("\n\nTo exit enter -1 or to continue enter 1");
 //        scanf("%d", &algo);
 //    }
-    int arrivalTime[5] = {3, 1, 4, 0, 2};
+    int arrivalTime[5] = {3, 1, 4, 0, 20};
     int burstTime[5] = {1, 4, 2, 6, 3};
     struct myProcess pr = createProcess(5, arrivalTime, burstTime);
     SRTF(&pr);
