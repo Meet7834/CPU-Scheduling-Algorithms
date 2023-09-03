@@ -9,7 +9,7 @@ struct queue{
 
 struct queue createQueue();
 
-void insertQueueQue(struct queue *q, int ele, int index);
+void insertQueueQue(struct queue *q, int index);
 
 int dequeQue(struct queue *q);
 

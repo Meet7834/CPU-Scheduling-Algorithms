@@ -7,20 +7,19 @@ struct queue createQueue() {
     return newQueue;
 }
 
-void insertQueueQue(struct queue *q, int ele, int index) {
+void insertQueueQue(struct queue *q, int index) {
     if (q->length > 100) {
         printf("\nQueue overflow");
         return;
     }
 
-    q->que[q->length] = ele;
     q->index[q->length] = index;
     q->length++;
 }
 
 int dequeQue(struct queue *q) {
-    if (q->length) return -1;
-    int removed = q->que[q->length];
+    if (q->length == 0) return -1;
+    int removed = q->index[0];
 
     // Left shift all the elements
     for (int i = 0; i < q->length - 1; i++) {
