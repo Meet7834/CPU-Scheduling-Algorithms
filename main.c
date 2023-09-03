@@ -27,5 +27,5 @@ int main() {
 
     struct myProcess myPr = createProcessPreEmptive(numProcess, arrivalTime, burstTime,timeQuantum);
     roundRobin(&myPr);
-    printProcess(&myPr);
+    printProcessPreEmptive(&myPr);
 }

@@ -26,4 +26,6 @@ struct myProcess createProcessPreEmptive(int numProcess, int arrivalTime[], int 
 
 void printProcess(struct myProcess *pr);
 
+void printProcessPreEmptive(struct myProcess *pr);
+
 #endif

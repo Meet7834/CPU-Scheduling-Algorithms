@@ -60,3 +60,24 @@ void printProcess(struct myProcess *pr) { // Prints the process varibles
     printf("\nAvg Waiting Time: %.2f", (float) pr->totalWaitingTime / (float) pr->numProcess);
     printf("\nAvg Turn Around Time: %.2f", (float) pr->totalTurnAroundTime / (float) pr->numProcess);
 }
+
+void printProcessPreEmptive(struct myProcess *pr) { // Prints the process varibles
+    printf("\nTotal time spent on running these process(s): %d", pr->timeSpent);
+    printf("\nTotal idle CPU time: %d", pr->idleCPUTime);
+
+    printf("\nCompletion Time for each process: ");
+    printArr(pr->completionTime, pr->numProcess);
+
+    printf("\nTurn Around Time for each process: ");
+    printArr(pr->turnAroundTime, pr->numProcess);
+
+    printf("\nWaiting Time for each process: ");
+    printArr(pr->waitingTime, pr->numProcess);
+
+    printf("\nResponse Time for each process: ");
+    printArr(pr->responseTime, pr->numProcess);
+
+    printf("\nAvg Waiting Time: %.2f", (float) pr->totalWaitingTime / (float) pr->numProcess);
+    printf("\nAvg Turn Around Time: %.2f", (float) pr->totalTurnAroundTime / (float) pr->numProcess);
+    printf("\nNumber of context switches: %d", pr->contextSwitches);
+}
