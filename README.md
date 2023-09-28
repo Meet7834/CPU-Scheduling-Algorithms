@@ -25,7 +25,7 @@ The CPU Scheduling Algorithm Simulator is a tool designed to help users understa
 
 ## Features
 
-- Supports multiple CPU scheduling algorithms (such as FCFS, SJF, etc.).
+- Supports multiple CPU scheduling algorithms (FCFS, SJF, SRTF and Round Robin).
 - Calculates and displays metrics including idle CPU time, waiting time, completion time, and total execution time.
 - Organized project structure with separate files for utility functions, algorithms, and data structures.
 
